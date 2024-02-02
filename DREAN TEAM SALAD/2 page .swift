@@ -103,7 +103,7 @@ struct page: View {
                                 .padding(.trailing, 100)
                                 .padding(.bottom, 50)
                         }
-                        
+  //
                     }
                     
                     VStack {

@@ -4,7 +4,7 @@
 //
 //  Created by Maryna Sunko on 2/2/24.
 //
-
+//
 import SwiftUI
 
 struct second_page: View {
