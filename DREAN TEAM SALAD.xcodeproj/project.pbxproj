@@ -11,6 +11,8 @@
 		C485924E2B6AAFD300E857CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485924D2B6AAFD300E857CA /* ContentView.swift */; };
 		C48592502B6AAFD400E857CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C485924F2B6AAFD400E857CA /* Assets.xcassets */; };
 		C48592532B6AAFD400E857CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48592522B6AAFD400E857CA /* Preview Assets.xcassets */; };
+		C485925A2B6BFBFB00E857CA /* 2 page .swift in Sources */ = {isa = PBXBuildFile; fileRef = C48592592B6BFBFB00E857CA /* 2 page .swift */; };
+		C485925C2B6D235B00E857CA /* second page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485925B2B6D235B00E857CA /* second page.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		C485924D2B6AAFD300E857CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C485924F2B6AAFD400E857CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C48592522B6AAFD400E857CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C48592592B6BFBFB00E857CA /* 2 page .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2 page .swift"; sourceTree = "<group>"; };
+		C485925B2B6D235B00E857CA /* second page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "second page.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				C485924B2B6AAFD300E857CA /* DREAN_TEAM_SALADApp.swift */,
 				C485924D2B6AAFD300E857CA /* ContentView.swift */,
+				C485925B2B6D235B00E857CA /* second page.swift */,
+				C48592592B6BFBFB00E857CA /* 2 page .swift */,
 				C485924F2B6AAFD400E857CA /* Assets.xcassets */,
 				C48592512B6AAFD400E857CA /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C485924E2B6AAFD300E857CA /* ContentView.swift in Sources */,
+				C485925C2B6D235B00E857CA /* second page.swift in Sources */,
+				C485925A2B6BFBFB00E857CA /* 2 page .swift in Sources */,
 				C485924C2B6AAFD300E857CA /* DREAN_TEAM_SALADApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
