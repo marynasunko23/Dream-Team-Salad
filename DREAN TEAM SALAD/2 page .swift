@@ -55,7 +55,7 @@ struct page: View {
                             .opacity(0.4)
                             .cornerRadius(10)
                             .overlay {
-                                Text ("NEW GAME")
+                                Text (" GAME")
                                     .foregroundStyle(.black)
                                 
                             }
