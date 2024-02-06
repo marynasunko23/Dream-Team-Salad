@@ -5,7 +5,6 @@
 //  Created by Maryna Sunko on 2/1/24.
 //
 
-//
 
 struct SaladImage: Identifiable {
     
@@ -37,12 +36,12 @@ struct page: View {
     
     
   @State  var saladIngredients:[SaladIngredients] = [
-        SaladIngredients(id: "1", name: "COUSCOUS", ingredients: "Roasted chickpeas  smoked paprika olive oil  lemon juice couscous cherry tomatoes  garlic fresh herbs cucumbers feta cheese"),
-        SaladIngredients(id: "2", name: "FATTOUSH", ingredients: "Romaine lettuce pita bread cucumbers cherry tomatoes red radishes fresh mint and parsley leaves sumac pomegranate molasses"),
-        SaladIngredients(id: "3", name: "MEXICAN FRUIT", ingredients: "Watermelon cantaloupe pineapple mangos cucumbers jícama  limes tajin chamoy sauce chile powder  salt"),
-        SaladIngredients(id: "4", name: "OLIVIER", ingredients: "Cooked potatoes carrots eggs meat pickles sweet onion rozen fresh peas cucumber mayo salt"),
+        SaladIngredients(id: "1", name: "COUSCOUS", ingredients: "Roasted chickpeas, smoked paprika, olive oil, lemon juice, couscous, cherry tomatoes, garlic fresh herbs cucumbers feta cheese"),
+        SaladIngredients(id: "2", name: "FATTOUSH", ingredients: "Romaine lettuce, pita bread, cucumbers, cherry tomatoes, red radishes, fresh mint, parsley leaves, sumac, pomegranate, molasses"),
+        SaladIngredients(id: "3", name: "MEXICAN FRUIT", ingredients: "Watermelon, cantaloupe, pineapple, mangos cucumbers, jícama, limes ,tajin, chamoy, sauce, chile, powder, salt"),
+        SaladIngredients(id: "4", name: "OLIVIER", ingredients: "Cooked potatoes, carrots, eggs, meat, pickles, sweet onion, frozen or fresh peas, cucumber, mayo, salt"),
         
-        SaladIngredients(id: "5", name: "CAESAR", ingredients: "Romaine lettuce chicken breast or shrimp  parmesan cheese french baguette garlic worcestershire sauce extra virgin olive oil fresh lemon juice wine vinegar salt black pepper")
+        SaladIngredients(id: "5", name: "CAESAR", ingredients: "Romaine lettuce, chicken breast or shrimp, parmesan cheese, french baguette, garlic, worcestershire sauce, extra virgin, olive oil, fresh lemon juice, wine vinegar salt, black pepper")
         
         
     ]
@@ -145,7 +144,7 @@ struct page: View {
                             .cornerRadius(10)
                             .opacity(0.8)
                             .overlay {
-                                Text ("HISTORI")
+                                Text ("HISTORY")
                                     .foregroundStyle(.black)
                                 
                             }

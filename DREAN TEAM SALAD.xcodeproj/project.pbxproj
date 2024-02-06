@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD247E782B727E5F00DBC5B3 /* AdrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD247E772B727E5F00DBC5B3 /* AdrTest.swift */; };
 		C43BE2C42B712D41006283C2 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43BE2C32B712D41006283C2 /* HistoryView.swift */; };
 		C43BE2C82B71499F006283C2 /* 2page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43BE2C72B71499F006283C2 /* 2page.swift */; };
 		C43BE2CA2B7276AF006283C2 /* firstpageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43BE2C92B7276AF006283C2 /* firstpageView.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BD247E772B727E5F00DBC5B3 /* AdrTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdrTest.swift; sourceTree = "<group>"; };
 		C43BE2C32B712D41006283C2 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		C43BE2C72B71499F006283C2 /* 2page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2page.swift; sourceTree = "<group>"; };
 		C43BE2C92B7276AF006283C2 /* firstpageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstpageView.swift; sourceTree = "<group>"; };
@@ -43,7 +41,6 @@
 		C485923F2B6AAFD300E857CA = {
 			isa = PBXGroup;
 			children = (
-				BD247E772B727E5F00DBC5B3 /* AdrTest.swift */,
 				C43BE2C92B7276AF006283C2 /* firstpageView.swift */,
 				C43BE2C72B71499F006283C2 /* 2page.swift */,
 				C485924A2B6AAFD300E857CA /* DREAN TEAM SALAD */,
@@ -154,7 +151,6 @@
 				C43BE2C42B712D41006283C2 /* HistoryView.swift in Sources */,
 				C485924C2B6AAFD300E857CA /* DREAN_TEAM_SALADApp.swift in Sources */,
 				C43BE2CA2B7276AF006283C2 /* firstpageView.swift in Sources */,
-				BD247E782B727E5F00DBC5B3 /* AdrTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
