@@ -5,7 +5,7 @@
 //  Created by Maryna Sunko on 2/1/24.
 //
 
-
+//
 
 struct SaladImage: Identifiable {
     
