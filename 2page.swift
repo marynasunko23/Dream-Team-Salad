@@ -80,9 +80,11 @@ struct page: View {
             } else {
                 gameText = "Oops try again"
                     
+                    
             }
             imageSelected = ""
             saladIngredientsSelected = ""
+                
         }
     }
     
@@ -177,6 +179,7 @@ struct page: View {
                                     }
                             }
                         }
+                        
                         Button{
                         } label:{
                                 
@@ -188,11 +191,11 @@ struct page: View {
                                 .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 10, x:0, y: 5)
  }
                             
-//                        .navigationTitle("ContentView")
+
                     }
                     
                     .padding()
-                    
+//                    .padding(.bottom,45)
                     
                     Spacer()
                     VStack {

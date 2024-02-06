@@ -9,38 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        VStack {
-            
+        NavigationView{
+            VStack {
                 
-            Text("SECRET SALAD")
-                .font(.largeTitle)
-                .bold()
-                .foregroundStyle(.green)
-            ZStack {
-                Image ("salad")
                 
-                    .padding()
-                
-                Button{
-                } label:{
-                
-                    Text ("START")
+                Text("SECRET SALAD")
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundStyle(.green)
+                ZStack {
+                    Image ("salad")
+                    
+                        .padding()
+                    
+//                    NavigationLink(destination: 2pageView){
+                        Button{
+                        } label:{
+                            
+                            Text ("START")
+                        }
+                        //.buttonStyle(.bordered)
+                        .tint(.red)
+                        .padding(.top, 115)
+                        .font(.largeTitle)
+                        .bold()
+                    
+//                    navigationTitle("ContentView")
                 }
-                //.buttonStyle(.bordered)
-                .tint(.red)
-                .padding(.top, 115)
-                .font(.largeTitle)
-                .bold()
+                
+                
                 
                 
             }
-           
-            
         }
     }
 }
-
 #Preview {
     ContentView()
 }
