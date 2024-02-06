@@ -126,7 +126,7 @@ struct page: View {
                             }
                         
                             .padding(.trailing,130)
-                            .padding(.bottom, 80)
+                            //.padding(.bottom, 80)
                         
                         
                         
@@ -148,7 +148,7 @@ struct page: View {
                                     .foregroundStyle(.black)
                                 
                             }
-                            .padding(.bottom, 80)
+                            //.padding(.bottom, 80)
                         
                         
                     }
