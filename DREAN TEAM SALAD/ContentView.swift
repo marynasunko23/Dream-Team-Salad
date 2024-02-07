@@ -10,19 +10,25 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView{
-            VStack {
+            ZStack {
                 
-                
-                Text("SECRET SALAD")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundStyle(.green)
-                ZStack {
-                    Image ("salad")
+                Color(.green)
+                    .ignoresSafeArea()
+                    .opacity(1)
+                VStack {
                     
-                        .padding()
                     
-//                    NavigationLink(destination: 2pageView){
+                    Text("SECRET SALAD")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundStyle(.white)
+                        
+                    ZStack {
+                        Image ("salad")
+                        
+                            .padding()
+                        
+                        //                    NavigationLink(destination: 2pageView){
                         Button{
                         } label:{
                             
@@ -33,13 +39,14 @@ struct ContentView: View {
                         .padding(.top, 115)
                         .font(.largeTitle)
                         .bold()
+                        
+                        //                    navigationTitle("ContentView")
+                    }
                     
-//                    navigationTitle("ContentView")
+                    
+                    
+                    
                 }
-                
-                
-                
-                
             }
         }
     }
