@@ -22,7 +22,7 @@ struct ContentView: View {
                     
                         .padding()
                     
-//                    NavigationLink(destination: 2pageView){
+                   
                         Button{
                         } label:{
                             
@@ -33,6 +33,7 @@ struct ContentView: View {
                         .padding(.top, 115)
                         .font(.largeTitle)
                         .bold()
+                    
                     
 //                    navigationTitle("ContentView")
                 }
