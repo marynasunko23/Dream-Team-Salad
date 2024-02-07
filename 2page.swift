@@ -86,7 +86,7 @@ struct page: View {
                 
         }
     }
-    
+    //
     var body: some View {
        
         ZStack {
