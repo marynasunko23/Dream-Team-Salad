@@ -90,6 +90,11 @@ struct page: View {
     var body: some View {
        
         ZStack {
+//            VStack {
+//                Color(.green)
+//                    .ignoresSafeArea()
+//                Spacer()
+//            }
             Image ("BACKGROUND")
             
             VStack {
@@ -100,7 +105,17 @@ struct page: View {
 //                    Text("Ingredient\(saladIngredientsSelected)")
 //                }
                 
-                Text(gameText)
+             //   ZStack {
+                Spacer()
+                    .frame(height: 23)
+                    Color.green
+                        .frame(height: 40)
+                    //    .ignoresSafeArea()
+                 //
+Text(gameText)
+                        .ignoresSafeArea()
+               // }
+                    
 //                    .foregroundStyle(.color,.green)
                 HStack{
                     
@@ -126,7 +141,7 @@ struct page: View {
                             }
                         
                             .padding(.trailing,130)
-                            .padding(.bottom, 80)
+                            .padding(.bottom, 20)
                         
                         
                         
@@ -148,13 +163,15 @@ struct page: View {
                                     .foregroundStyle(.black)
                                 
                             }
-                            .padding(.bottom, 80)
+                            .padding(.bottom, 20)
                         
                         
                     }
                     
                     
                 }
+                
+                
                 HStack {
                     
                     VStack {
