@@ -18,6 +18,7 @@ struct ContentView: View {
                 VStack {
                     
                     
+
                     Text("SECRET SALAD")
                         .font(.largeTitle)
                         .bold()
@@ -28,7 +29,8 @@ struct ContentView: View {
                         
                             .padding()
                         
-                        //                    NavigationLink(destination: 2pageView){
+                      
+
                         Button{
                         } label:{
                             
@@ -40,12 +42,9 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .bold()
                         
-                        //                    navigationTitle("ContentView")
+                       
                     }
-                    
-                    
-                    
-                    
+
                 }
             }
         }
