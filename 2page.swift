@@ -91,24 +91,26 @@ struct page: View {
                 
         }
     }
-    
+    //
     var body: some View {
        
         ZStack {
+//            VStack {
+//                Color(.green)
+//                    .ignoresSafeArea()
+//                Spacer()
+//            }
             Image ("BACKGROUND")
             
             VStack {
-                
-//                HStack {
-//
-//                    Text("Image \(imageSelected)")
-//                    Text("Ingredient\(saladIngredientsSelected)")
-//                }
-                
-            Text(gameText)               
-                    .foregroundColor(gameTextColor)
-                    .font(.title2)
-                    
+
+              Spacer()
+                    .frame(height: 23)
+             
+                    Color.green
+                        .frame(height: 40)
+
+
                 HStack{
                     
                     Button {
@@ -138,12 +140,7 @@ struct page: View {
                                     .foregroundStyle(.white)
                                 
                             }
-                        
 
-                            .padding(.trailing,130)
-                            //.padding(.bottom, 80)
-
-                        
                         Spacer()
                         Text("Score \(score)")
                         Spacer()
@@ -169,12 +166,6 @@ struct page: View {
                             .shadow(color: .black, radius: 2, x:0, y: 2)
                             .overlay {
                                 Text ("HISTORY")
-
-                                    .shadow(color: .black, radius: 2, x:0, y: 2)
-                                    .foregroundStyle(.white)
-                                
-                            }
-                           // .padding(.bottom, 80)
 
                         
                         
