@@ -12,6 +12,7 @@ struct SaladImage: Identifiable {
     var image:String
 }
 
+
 struct SaladIngredients: Identifiable {
     var id:String
     var name:String
@@ -19,11 +20,15 @@ struct SaladIngredients: Identifiable {
 }
 import SwiftUI
 
-struct page: View {
+struct pageOne: View {
     
     
    @State var correctSaladImages:[SaladImage] = []
     @State var correctSaladIngredients:[SaladIngredients] = []
+    
+    
+    @State var currentGameSaladImages:[SaladImage] = []
+     @State var currentGameSaladIngredients:[SaladIngredients] = []
     
   @State  var saladImages:[SaladImage] = [
         
@@ -31,7 +36,14 @@ struct page: View {
         SaladImage(id: "2", image: "FATTOUSH"),
         SaladImage(id: "3", image: "MEXICAN FRUIT"),
         SaladImage(id: "4", image: "OLIVIER"),
-        SaladImage(id: "5", image: "CAESAR")
+        SaladImage(id: "5", image: "CAESAR"),
+        SaladImage(id: "6", image: "ASPARAGUS"),
+        SaladImage(id: "7", image: "GREEK"),
+        SaladImage(id: "8", image: "WALDORF"),
+        SaladImage(id: "9", image: "KALE"),
+        SaladImage(id: "10", image: "PASTA")
+        
+        
     ]
     
     
@@ -41,8 +53,13 @@ struct page: View {
         SaladIngredients(id: "3", name: "MEXICAN FRUIT", ingredients: "Watermelon, cantaloupe, pineapple, mangos cucumbers, jícama, limes ,tajin, chamoy, sauce, chile, powder, salt"),
         SaladIngredients(id: "4", name: "OLIVIER", ingredients: "Cooked potatoes, carrots, eggs, meat, pickles, sweet onion, frozen or fresh peas, cucumber, mayo, salt"),
         
-        SaladIngredients(id: "5", name: "CAESAR", ingredients: "Romaine lettuce, chicken breast or shrimp, parmesan cheese, french baguette, garlic, worcestershire sauce, extra virgin, olive oil, fresh lemon juice, wine vinegar salt, black pepper")
+        SaladIngredients(id: "5", name: "CAESAR", ingredients: "Romaine lettuce chicken breast or shrimp  parmesan cheese french baguette garlic worcestershire sauce extra virgin olive oil fresh lemon juice wine vinegar salt black pepper"),
+        SaladIngredients(id: "6", name: "ASPARAGUS", ingredients: "Fresh ginger rice wine vinegar vegetable oil  brown sugar soy sauce  fresh lime juice asian/toasted sesame oil pepper medium asparagus scallions cilantro mint sesame seeds sliced almonds"),
+        SaladIngredients(id: "7", name: "GREEK", ingredients: "Large tomatoes cucumber red onion green bell pepper Kalamata olives  Feta cheese extra virgin olive oil salt dried oregano"),
+        SaladIngredients(id: "8", name: "WALDORF", ingredients: " Sweet apple, red grapes, raisins, sliced celery, toasted walnuts, mayonnaise, lemon juice"),
+        SaladIngredients(id: "9", name: "KALE", ingredients: "Kale  shredder beet  carrot  avocado watermelon radish   cranberries roasted chickpeas toasted pepitas and sesame seeds salt and pepper extra-virgin olive oil and fresh lemon juice"),
         
+        SaladIngredients(id: "10", name: "PASTA", ingredients: "Fusilli pasta cherry tomatoes  cooked chickpeas arugula persian cucumbers crumbled feta cheese basil leaves minced parsley chopped mint toasted pine nuts extra-virgin olive oil lemon juice")
         
     ]
     
@@ -51,38 +68,32 @@ struct page: View {
     @State var gameText = "Secret Salad"
     @State var gameTextColor = Color.green
     @State private var showingSheet = false
+//    @State private var score = 0
     @State var score = 0
 
      
              
     
     func checkIFMatch() {
-        
-        
+ 
         if imageSelected != "" && saladIngredientsSelected != "" {
-            
-            
             if imageSelected == saladIngredientsSelected {
                 gameText = "You got it right!"
                 gameTextColor = Color(.green)
                 score += 1
                     
-                
-                saladIngredients.removeAll { salad in
+                currentGameSaladIngredients.removeAll { salad in
                     salad.id == saladIngredientsSelected
                 }
                 
-                saladImages.removeAll { salad in
+                currentGameSaladImages.removeAll { salad in
                     correctSaladImages.append(salad)
                    return  salad.id == imageSelected
-                    
-                    
-                    
                 }
                 
             } else {
                 gameText = "Oops try again"
-                    
+                gameTextColor = Color(.red)
                     
                     
             }
@@ -91,7 +102,21 @@ struct page: View {
                 
         }
     }
-    //
+    
+    func startNewGame() {
+        score = 0
+    currentGameSaladImages = []
+    currentGameSaladIngredients = []
+        
+        for index in 1...5 {
+            currentGameSaladImages.append(saladImages[index])
+            currentGameSaladIngredients.append(saladIngredients[index])
+        }
+        
+        currentGameSaladImages.shuffle()
+        currentGameSaladIngredients.shuffle()
+    }
+    
     var body: some View {
        
         ZStack {
@@ -103,35 +128,40 @@ struct page: View {
             Image ("BACKGROUND")
             
             VStack {
-
-              Spacer()
-                    .frame(height: 23)
-             
-                    Color.green
-                        .frame(height: 40)
-
-
+                
+//                HStack {
+//
+//                    Text("Image \(imageSelected)")
+//                    Text("Ingredient\(saladIngredientsSelected)")
+//                }
+                
+            Text(gameText)               
+                    .foregroundColor(.white)
+                    .font(.title2)
+                   .frame(maxWidth: .infinity)
+                   .background(Color.greenbutton)
+                   .padding(.bottom)
+                   
                 HStack{
                     
                     Button {
                         
-                        saladIngredients.shuffle()
-                        saladImages.shuffle()
+                        startNewGame()
                         
-                    
+                        
                     }label: {
                         
                         Rectangle()
                         
                             .frame(width:100)
                             .frame(height: 50)
-                          .foregroundColor(.greenbutton)
-                               .background(
+                            .foregroundColor(.greenbutton)
+                            .background(
                                 LinearGradient(gradient: Gradient(colors: [Color.black, Color.white] ), startPoint: .leading, endPoint: .trailing)
                                     .cornerRadius(15))
                             .opacity(0.8)
                             .cornerRadius(15)
-                          .shadow(color: .black, radius: 2, x:0, y: 2)
+                            .shadow(color: .black, radius: 2, x:0, y: 2)
                             .overlay {
                                 
                                 Text ("NEW GAME")
@@ -140,10 +170,13 @@ struct page: View {
                                     .foregroundStyle(.white)
                                 
                             }
-
+                        
                         Spacer()
                         Text("Score \(score)")
+                            .foregroundStyle(Color.greenbutton)
                         Spacer()
+                        //                        Button ("NEW GAME:\ (score)"<#PrimitiveButtonStyleConfiguration#>)
+                        //                                               score = 0
                         
                         
                     }
@@ -160,24 +193,27 @@ struct page: View {
                             .cornerRadius(10)
                             .background(
                                 LinearGradient(gradient: Gradient(colors: [Color.white, Color.black] ), startPoint: .leading, endPoint: .trailing) //
-                                                   .cornerRadius(15) )
+                                    .cornerRadius(15) )
                             .opacity(0.8)
                             .cornerRadius(15)
                             .shadow(color: .black, radius: 2, x:0, y: 2)
                             .overlay {
                                 Text ("HISTORY")
-
+                                    .shadow(color: .black, radius: 2, x:0, y: 2)
+                                
+                                    .foregroundStyle(.white)
+                                
+                                
+                            }
                         
                         
                     }
-                    
-                    
                 }
                 .padding()
                 HStack {
                     
                     VStack {
-                        ForEach(saladImages) { salad in
+                        ForEach(currentGameSaladImages) { salad in
                             
                             Button {
                                 imageSelected = salad.id
@@ -199,26 +235,14 @@ struct page: View {
                                     }
                             }
                         }
-                      
-//                            Button{
-//                            } label:{
-//                                
-//                                
-////                                Image (systemName:"arrow.left")
-////                                    .padding()
-////                                    .foregroundColor(.green)
-////                                    .bold()
-////                                    .shadow(color: .red, radius: 10, x:0, y: 5)
-//                            }
-//                            
-                        
+   
                        
                     }
                     
                     .padding()
                     Spacer()
                     VStack {
-                        ForEach(saladIngredients) { salad in
+                        ForEach(currentGameSaladIngredients) { salad in
                             
                             Button {
                                 saladIngredientsSelected = salad.id
@@ -248,22 +272,14 @@ struct page: View {
                             
 
                                 }
-//                        Button{
-//                        } label:{
-//                            
-//                            Image (systemName:"arrow.right")
-//                                .padding()
-//                                .foregroundColor(.green)
-//                                .bold()
-//                                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 10, x:0, y: 5)
-//                        }
+
                         }
                     .padding()
                     .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 10, x:0, y: 5)
                     }
                 }
             .sheet(isPresented: $showingSheet, content: {
-                HistoryView(correctIngredients: $correctSaladIngredients)
+                HistoryView(correctIngredients: saladIngredients, correctImages: saladImages)
             })
            
         }
@@ -272,7 +288,7 @@ struct page: View {
 }
     
     #Preview {
-        page()
+        pageOne()
         
     }
     
