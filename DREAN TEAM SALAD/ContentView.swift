@@ -10,27 +10,25 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView{
-            ZStack {
-                
-                Color(.green)
-                    .ignoresSafeArea()
-                    .opacity(1)
+            
+//            ZStack {
+//                Image ("BACKGROUND")
                 VStack {
+//                    
                     
-                    
-
                     Text("SECRET SALAD")
                         .font(.largeTitle)
+                        .shadow(color: .black, radius: 2, x:0, y: 2)
+                    
                         .bold()
-                        .foregroundStyle(.white)
-                        
+                        .foregroundStyle(.green)
                     ZStack {
                         Image ("salad")
+                           
                         
                             .padding()
                         
-                      
-
+                        
                         Button{
                         } label:{
                             
@@ -38,14 +36,19 @@ struct ContentView: View {
                         }
                         //.buttonStyle(.bordered)
                         .tint(.red)
+                        .shadow(color: .black, radius: 2, x:0, y: 2)
+                    
                         .padding(.top, 115)
                         .font(.largeTitle)
                         .bold()
                         
-                       
-                    }
-
+                        
+                        //                    navigationTitle("ContentView")
+//                    }
+                    
                 }
+                
+                
             }
         }
     }
