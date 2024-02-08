@@ -49,7 +49,9 @@ struct page: View {
     @State var imageSelected = ""
     @State var saladIngredientsSelected = ""
     @State var gameText = "Secret Salad"
+    @State var gameTextColor = Color.green
     @State private var showingSheet = false
+    @State var score = 0
 
      
              
@@ -62,6 +64,8 @@ struct page: View {
             
             if imageSelected == saladIngredientsSelected {
                 gameText = "You got it right!"
+                gameTextColor = Color(.green)
+                score += 1
                     
                 
                 saladIngredients.removeAll { salad in
@@ -78,6 +82,7 @@ struct page: View {
                 
             } else {
                 gameText = "Oops try again"
+                    
                     
                     
             }
@@ -100,8 +105,10 @@ struct page: View {
 //                    Text("Ingredient\(saladIngredientsSelected)")
 //                }
                 
-                Text(gameText)
-//                    .foregroundStyle(.color,.green)
+            Text(gameText)               
+                    .foregroundColor(gameTextColor)
+                    .font(.title2)
+                    
                 HStack{
                     
                     Button {
@@ -116,18 +123,30 @@ struct page: View {
                         
                             .frame(width:100)
                             .frame(height: 50)
-                            .foregroundColor(.greenbutton)
+                          .foregroundColor(.greenbutton)
+                               .background(
+                                LinearGradient(gradient: Gradient(colors: [Color.black, Color.white] ), startPoint: .leading, endPoint: .trailing)
+                                    .cornerRadius(15))
                             .opacity(0.8)
-                            .cornerRadius(10)
+                            .cornerRadius(15)
+                          .shadow(color: .black, radius: 2, x:0, y: 2)
                             .overlay {
+                                
                                 Text ("NEW GAME")
-                                    .foregroundStyle(.black)
+                                    .shadow(color: .black, radius: 2, x:0, y: 2)
+                                
+                                    .foregroundStyle(.white)
                                 
                             }
                         
+
                             .padding(.trailing,130)
                             //.padding(.bottom, 80)
+
                         
+                        Spacer()
+                        Text("Score \(score)")
+                        Spacer()
                         
                         
                     }
@@ -142,19 +161,28 @@ struct page: View {
                         
                             .foregroundColor(.greenbutton)
                             .cornerRadius(10)
+                            .background(
+                                LinearGradient(gradient: Gradient(colors: [Color.white, Color.black] ), startPoint: .leading, endPoint: .trailing) //
+                                                   .cornerRadius(15) )
                             .opacity(0.8)
+                            .cornerRadius(15)
+                            .shadow(color: .black, radius: 2, x:0, y: 2)
                             .overlay {
                                 Text ("HISTORY")
-                                    .foregroundStyle(.black)
+
+                                    .shadow(color: .black, radius: 2, x:0, y: 2)
+                                    .foregroundStyle(.white)
                                 
                             }
-                            //.padding(.bottom, 80)
+                           // .padding(.bottom, 80)
+
                         
                         
                     }
                     
                     
                 }
+                .padding()
                 HStack {
                     
                     VStack {
@@ -170,32 +198,33 @@ struct page: View {
                                     .foregroundColor(.green)
                                     .cornerRadius(10)
                                     .opacity(0.4)
+                                    .shadow(color: .black, radius: 5, x:0, y: 5)
                                     .overlay {
                                         Image(salad.image)
                                             .resizable()
+                                            .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
                                         
                                         
                                     }
                             }
                         }
+                      
+//                            Button{
+//                            } label:{
+//                                
+//                                
+////                                Image (systemName:"arrow.left")
+////                                    .padding()
+////                                    .foregroundColor(.green)
+////                                    .bold()
+////                                    .shadow(color: .red, radius: 10, x:0, y: 5)
+//                            }
+//                            
                         
-                        Button{
-                        } label:{
-                                
-                           
-                            Image (systemName:"arrow.left")
-                                .padding()
-                                .foregroundColor(.green)
-                                .bold()
-                                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 10, x:0, y: 5)
- }
-                            
-
+                       
                     }
                     
                     .padding()
-//                    .padding(.bottom,45)
-                    
                     Spacer()
                     VStack {
                         ForEach(saladIngredients) { salad in
@@ -210,6 +239,7 @@ struct page: View {
                                     .foregroundColor(.green)
                                     .cornerRadius(10)
                                     .opacity(0.4)
+                                
                                     .overlay {
                                         
                                         VStack {
@@ -227,15 +257,15 @@ struct page: View {
                             
 
                                 }
-                        Button{
-                        } label:{
-                            
-                            Image (systemName:"arrow.right")
-                                .padding()
-                                .foregroundColor(.green)
-                                .bold()
-                                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 10, x:0, y: 5)
-                        }
+//                        Button{
+//                        } label:{
+//                            
+//                            Image (systemName:"arrow.right")
+//                                .padding()
+//                                .foregroundColor(.green)
+//                                .bold()
+//                                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 10, x:0, y: 5)
+//                        }
                         }
                     .padding()
                     .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 10, x:0, y: 5)
