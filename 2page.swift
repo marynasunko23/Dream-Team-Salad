@@ -6,7 +6,6 @@
 //
 
 
-
 struct SaladImage: Identifiable {
     
     var id:String
@@ -37,12 +36,12 @@ struct page: View {
     
     
   @State  var saladIngredients:[SaladIngredients] = [
-        SaladIngredients(id: "1", name: "COUSCOUS", ingredients: "Roasted chickpeas  smoked paprika olive oil  lemon juice couscous cherry tomatoes  garlic fresh herbs cucumbers feta cheese"),
-        SaladIngredients(id: "2", name: "FATTOUSH", ingredients: "Romaine lettuce pita bread cucumbers cherry tomatoes red radishes fresh mint and parsley leaves sumac pomegranate molasses"),
-        SaladIngredients(id: "3", name: "MEXICAN FRUIT", ingredients: "Watermelon cantaloupe pineapple mangos cucumbers jícama  limes tajin chamoy sauce chile powder  salt"),
-        SaladIngredients(id: "4", name: "OLIVIER", ingredients: "Cooked potatoes carrots eggs meat pickles sweet onion rozen fresh peas cucumber mayo salt"),
+        SaladIngredients(id: "1", name: "COUSCOUS", ingredients: "Roasted chickpeas, smoked paprika, olive oil, lemon juice, couscous, cherry tomatoes, garlic fresh herbs cucumbers feta cheese"),
+        SaladIngredients(id: "2", name: "FATTOUSH", ingredients: "Romaine lettuce, pita bread, cucumbers, cherry tomatoes, red radishes, fresh mint, parsley leaves, sumac, pomegranate, molasses"),
+        SaladIngredients(id: "3", name: "MEXICAN FRUIT", ingredients: "Watermelon, cantaloupe, pineapple, mangos cucumbers, jícama, limes ,tajin, chamoy, sauce, chile, powder, salt"),
+        SaladIngredients(id: "4", name: "OLIVIER", ingredients: "Cooked potatoes, carrots, eggs, meat, pickles, sweet onion, frozen or fresh peas, cucumber, mayo, salt"),
         
-        SaladIngredients(id: "5", name: "CAESAR", ingredients: "Romaine lettuce chicken breast or shrimp  parmesan cheese french baguette garlic worcestershire sauce extra virgin olive oil fresh lemon juice wine vinegar salt black pepper")
+        SaladIngredients(id: "5", name: "CAESAR", ingredients: "Romaine lettuce, chicken breast or shrimp, parmesan cheese, french baguette, garlic, worcestershire sauce, extra virgin, olive oil, fresh lemon juice, wine vinegar salt, black pepper")
         
         
     ]
@@ -92,24 +91,26 @@ struct page: View {
                 
         }
     }
-    
+    //
     var body: some View {
        
         ZStack {
+//            VStack {
+//                Color(.green)
+//                    .ignoresSafeArea()
+//                Spacer()
+//            }
             Image ("BACKGROUND")
             
             VStack {
-                
-//                HStack {
-//
-//                    Text("Image \(imageSelected)")
-//                    Text("Ingredient\(saladIngredientsSelected)")
-//                }
-                
-            Text(gameText)               
-                    .foregroundColor(gameTextColor)
-                    .font(.title2)
-                    
+
+              Spacer()
+                    .frame(height: 23)
+             
+                    Color.green
+                        .frame(height: 40)
+
+
                 HStack{
                     
                     Button {
@@ -139,10 +140,7 @@ struct page: View {
                                     .foregroundStyle(.white)
                                 
                             }
-                        
-                           // .padding(.trailing,90)
-                          //  .padding(.bottom, 80)
-                        
+
                         Spacer()
                         Text("Score \(score)")
                         Spacer()
@@ -168,11 +166,7 @@ struct page: View {
                             .shadow(color: .black, radius: 2, x:0, y: 2)
                             .overlay {
                                 Text ("HISTORY")
-                                    .shadow(color: .black, radius: 2, x:0, y: 2)
-                                    .foregroundStyle(.white)
-                                
-                            }
-                           // .padding(.bottom, 80)
+
                         
                         
                     }
